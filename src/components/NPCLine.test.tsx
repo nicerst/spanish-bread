@@ -18,7 +18,7 @@ describe('NPCLine', () => {
   it('calls speak on mount', () => {
     render(<NPCLine npcName="El Camarero" line="Buenos dias" />)
     expect(speechSynthesis.speak).toHaveBeenCalledWith(
-      expect.objectContaining({ lang: 'es-ES' })
+      expect.objectContaining({ lang: 'es-CO' })
     )
   })
 

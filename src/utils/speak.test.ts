@@ -7,7 +7,7 @@ describe('speak', () => {
   it('calls speechSynthesis.speak with correct lang and text', () => {
     speak('Hola')
     expect(speechSynthesis.speak).toHaveBeenCalledWith(
-      expect.objectContaining({ lang: 'es-ES', text: 'Hola' })
+      expect.objectContaining({ lang: 'es-CO', text: 'Hola' })
     )
   })
 
