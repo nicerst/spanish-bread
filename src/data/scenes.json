@@ -1,0 +1,344 @@
+[
+  {
+    "id": "cafe",
+    "title": "El Café",
+    "npcName": "El Camarero",
+    "vocabDomain": "food/drink",
+    "task": "Order food and pay the bill",
+    "exchanges": [
+      {
+        "id": "cafe-1",
+        "npcLine": "¡Buenos días! ¿Qué desea usted?",
+        "options": [
+          {
+            "es": "Quiero un café con leche, por favor.",
+            "en": "I'd like a coffee with milk, please.",
+            "correct": true
+          },
+          {
+            "es": "No hablo español.",
+            "en": "I don't speak Spanish.",
+            "correct": false
+          },
+          {
+            "es": "¿Cuánto cuesta?",
+            "en": "How much does it cost?",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "cafe-2",
+        "npcLine": "¿Algo para comer?",
+        "options": [
+          {
+            "es": "Sí, un bocadillo de jamón, por favor.",
+            "en": "Yes, a ham sandwich, please.",
+            "correct": true
+          },
+          {
+            "es": "Quiero ir a la estación.",
+            "en": "I want to go to the station.",
+            "correct": false
+          },
+          {
+            "es": "No entiendo.",
+            "en": "I don't understand.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "cafe-3",
+        "npcLine": "¡Aquí tiene! ¡Buen provecho!",
+        "options": [
+          {
+            "es": "Muchas gracias.",
+            "en": "Thank you very much.",
+            "correct": true
+          },
+          {
+            "es": "No, gracias.",
+            "en": "No, thank you.",
+            "correct": false
+          },
+          {
+            "es": "¿Dónde está el baño?",
+            "en": "Where is the bathroom?",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "cafe-4",
+        "npcLine": "¿Está todo bien?",
+        "options": [
+          {
+            "es": "Sí, está muy rico.",
+            "en": "Yes, it's very delicious.",
+            "correct": true
+          },
+          {
+            "es": "No, no me gusta.",
+            "en": "No, I don't like it.",
+            "correct": false
+          },
+          {
+            "es": "Quiero más café.",
+            "en": "I want more coffee.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "cafe-5",
+        "npcLine": "¿Desea algo más?",
+        "options": [
+          {
+            "es": "La cuenta, por favor.",
+            "en": "The bill, please.",
+            "correct": true
+          },
+          {
+            "es": "Otro café, por favor.",
+            "en": "Another coffee, please.",
+            "correct": false
+          },
+          {
+            "es": "No, estoy bien.",
+            "en": "No, I'm fine.",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "plaza",
+    "title": "La Plaza",
+    "npcName": "El Vecino",
+    "vocabDomain": "directions",
+    "task": "Get directions to the bus station",
+    "exchanges": [
+      {
+        "id": "plaza-1",
+        "npcLine": "¡Hola! ¿Necesita ayuda?",
+        "options": [
+          {
+            "es": "Sí, ¿dónde está la estación de autobuses?",
+            "en": "Yes, where is the bus station?",
+            "correct": true
+          },
+          {
+            "es": "No, gracias. Estoy bien.",
+            "en": "No thanks. I'm fine.",
+            "correct": false
+          },
+          {
+            "es": "Quiero un café.",
+            "en": "I want a coffee.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "plaza-2",
+        "npcLine": "Claro. ¿Sabe cómo llegar?",
+        "options": [
+          {
+            "es": "No, no sé. ¿Puede explicarme?",
+            "en": "No, I don't know. Can you explain?",
+            "correct": true
+          },
+          {
+            "es": "Sí, ya sé.",
+            "en": "Yes, I already know.",
+            "correct": false
+          },
+          {
+            "es": "No hablo español.",
+            "en": "I don't speak Spanish.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "plaza-3",
+        "npcLine": "Siga recto por esta calle.",
+        "options": [
+          {
+            "es": "¿Sigo recto por esta calle?",
+            "en": "I go straight down this street?",
+            "correct": true
+          },
+          {
+            "es": "¿Giro a la izquierda?",
+            "en": "I turn left?",
+            "correct": false
+          },
+          {
+            "es": "¿Está muy lejos?",
+            "en": "Is it very far?",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "plaza-4",
+        "npcLine": "Sí, y luego gire a la derecha.",
+        "options": [
+          {
+            "es": "Entendido. ¿A la derecha?",
+            "en": "Understood. To the right?",
+            "correct": true
+          },
+          {
+            "es": "¿A la izquierda?",
+            "en": "To the left?",
+            "correct": false
+          },
+          {
+            "es": "¿Sigo recto?",
+            "en": "I keep going straight?",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "plaza-5",
+        "npcLine": "Exacto. Está enfrente del parque.",
+        "options": [
+          {
+            "es": "Muchas gracias. ¡Es usted muy amable!",
+            "en": "Thank you very much. You're very kind!",
+            "correct": true
+          },
+          {
+            "es": "No entiendo.",
+            "en": "I don't understand.",
+            "correct": false
+          },
+          {
+            "es": "¿Dónde está el café?",
+            "en": "Where is the café?",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bus-station",
+    "title": "La Estación de Autobuses",
+    "npcName": "El Taquillero",
+    "vocabDomain": "travel/tickets",
+    "task": "Buy a bus ticket",
+    "exchanges": [
+      {
+        "id": "bus-1",
+        "npcLine": "¡Buenos días! ¿En qué le puedo ayudar?",
+        "options": [
+          {
+            "es": "Quiero un billete para Madrid, por favor.",
+            "en": "I'd like a ticket to Madrid, please.",
+            "correct": true
+          },
+          {
+            "es": "¿Dónde está el autobús?",
+            "en": "Where is the bus?",
+            "correct": false
+          },
+          {
+            "es": "Quiero un café.",
+            "en": "I want a coffee.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "bus-2",
+        "npcLine": "¿Ida o ida y vuelta?",
+        "options": [
+          {
+            "es": "Ida y vuelta, por favor.",
+            "en": "Round trip, please.",
+            "correct": true
+          },
+          {
+            "es": "Solo ida.",
+            "en": "One way only.",
+            "correct": false
+          },
+          {
+            "es": "No entiendo.",
+            "en": "I don't understand.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "bus-3",
+        "npcLine": "¿Para cuándo?",
+        "options": [
+          {
+            "es": "Para hoy, por favor.",
+            "en": "For today, please.",
+            "correct": true
+          },
+          {
+            "es": "Para mañana.",
+            "en": "For tomorrow.",
+            "correct": false
+          },
+          {
+            "es": "No sé.",
+            "en": "I don't know.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "bus-4",
+        "npcLine": "El próximo autobús sale a las tres.",
+        "options": [
+          {
+            "es": "Perfecto. ¿Cuánto cuesta?",
+            "en": "Perfect. How much does it cost?",
+            "correct": true
+          },
+          {
+            "es": "¿A las cuatro?",
+            "en": "At four oclock?",
+            "correct": false
+          },
+          {
+            "es": "No quiero ese.",
+            "en": "I don't want that one.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "bus-5",
+        "npcLine": "Son veinte euros.",
+        "options": [
+          {
+            "es": "Aquí tiene. Muchas gracias.",
+            "en": "Here you go. Thank you very much.",
+            "correct": true
+          },
+          {
+            "es": "Es muy caro.",
+            "en": "That's very expensive.",
+            "correct": false
+          },
+          {
+            "es": "No tengo dinero.",
+            "en": "I don't have money.",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  }
+]
