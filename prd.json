@@ -1,0 +1,34 @@
+{
+  "project": "Spanish Bread",
+  "branchName": "feature/kokoro-spanish-voice",
+  "description": "Add Kokoro Spanish voice support with Web Speech fallback and install requested agent resources.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Install requested agent resources",
+      "description": "Install compatible skills/plugins from opensrc and record magictools resource findings.",
+      "acceptanceCriteria": [
+        "The opensrc Codex skill exists at C:\\Users\\Admin\\.codex\\skills\\opensrc\\SKILL.md.",
+        "The opensrc CLI resolves on PATH.",
+        "The magictools repository is scanned and documented as resources-only when no Codex skill/plugin manifests are present."
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": "magictools has no SKILL.md or plugin.json files."
+    },
+    {
+      "id": "US-002",
+      "title": "Add Kokoro Spanish TTS provider",
+      "description": "Route app speech through a configurable Kokoro-compatible endpoint using Spanish language code e and voice ef_dora, with Web Speech fallback.",
+      "acceptanceCriteria": [
+        "speakAsync posts text, lang, kokoroLang e, and voice ef_dora to a configured endpoint.",
+        "Failed endpoint requests fall back to browser Web Speech API.",
+        "NPCLine and WinScreen continue using the existing speak entry point.",
+        "README documents the Kokoro endpoint contract and backend run command."
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": "Reference FastAPI backend is in server/kokoro_tts_api.py."
+    }
+  ]
+}

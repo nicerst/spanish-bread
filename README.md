@@ -2,7 +2,7 @@
 
 Interactive 3D web game that teaches conversational Spanish through story. You're a traveler stranded in a Spanish-speaking town — complete 3 tasks by choosing correct Spanish dialogue responses to escape.
 
-**Zero backend. Zero install. Runs in browser.**
+Runs in browser with a Web Speech fallback. Production can use a Kokoro TTS endpoint for consistent Spanish voice.
 
 ## Stack
 
@@ -15,7 +15,7 @@ Interactive 3D web game that teaches conversational Spanish through story. You'r
 | State | Zustand + localStorage persistence |
 | Styling | Tailwind CSS |
 | Build | Vite |
-| Audio | Web Speech API (browser-native, no assets) |
+| Audio | Kokoro Spanish TTS endpoint with Web Speech API fallback |
 
 ## Scenes
 
@@ -43,7 +43,35 @@ npm run build     # outputs to /dist
 npm run preview   # preview production build locally
 ```
 
-Deploy `/dist` to Vercel or Netlify — no config needed.
+## Kokoro Spanish Voice
+
+Deploy `/dist` to Vercel or Netlify. For the Kokoro Spanish voice, deploy a compatible POST endpoint and set:
+
+```bash
+VITE_TTS_ENDPOINT=https://your-tts-host.example.com/api/tts
+```
+
+If the endpoint is omitted or fails, the app falls back to the browser's Spanish Web Speech voice.
+
+The app sends Spanish dialogue to a Kokoro-compatible endpoint with:
+
+```json
+{
+  "text": "Buenos dias",
+  "lang": "es-CO",
+  "kokoroLang": "e",
+  "voice": "ef_dora"
+}
+```
+
+Reference backend:
+
+```bash
+pip install -r requirements-tts.txt
+uvicorn server.kokoro_tts_api:app --host 0.0.0.0 --port 8000
+```
+
+Kokoro Spanish requires the system `espeak-ng` package on the backend host.
 
 ## Tests
 

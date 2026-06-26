@@ -1,0 +1,68 @@
+feature: Kokoro Spanish voice rollout
+kind: tts-provider-upgrade
+system: Spanish Bread React game
+goal: Use a consistent Kokoro Spanish voice in production while preserving browser fallback.
+inputs:
+  - NPC dialogue text from scene exchanges
+  - Win-screen Spanish text
+  - VITE_TTS_ENDPOINT or same-origin /api/tts
+outputs:
+  - Played Kokoro-generated WAV audio when endpoint succeeds
+  - Browser Web Speech Spanish fallback when endpoint is absent or fails
+acceptance_criteria:
+  - speakAsync posts text, lang, kokoroLang e, and voice ef_dora to a configured endpoint.
+  - Failed endpoint requests fall back to browser Web Speech API.
+  - Existing component entry points keep calling speak(line).
+  - Tests cover endpoint success, endpoint failure fallback, and no speechSynthesis.
+constraints:
+  - Keep Vite build free of heavy Python/Kokoro dependencies.
+  - Kokoro Spanish backend requires espeak-ng on the host.
+  - Preserve the existing no-blocking component API.
+out_of_scope:
+  - Bundling Kokoro model weights into the browser app.
+  - Adding custom voice selection UI.
+impact_map:
+  modified:
+    - path: src/utils/speak.ts
+      anchors:
+        - speak
+        - speakAsync
+    - path: src/utils/speak.test.ts
+      anchors:
+        - Kokoro endpoint payload
+        - Web Speech fallback
+    - path: src/test/setup.ts
+      anchors:
+        - SpeechSynthesisUtterance mock
+        - Audio mock
+    - path: README.md
+      anchors:
+        - Kokoro Spanish Voice
+  created:
+    - path: server/kokoro_tts_api.py
+      anchors:
+        - POST /api/tts
+    - path: requirements-tts.txt
+    - path: docs/magictools-resources.md
+    - path: prd.json
+risks:
+  - risk: Kokoro backend cold start or model download is too slow for serverless hosts.
+    mitigation: Keep endpoint configurable so it can run on a persistent Python host.
+  - risk: Backend lacks espeak-ng, causing Spanish phonemization failure.
+    mitigation: README documents the system package requirement.
+  - risk: Endpoint outage blocks game audio.
+    mitigation: Web Speech fallback remains automatic.
+validation:
+  unit:
+    - npm test
+  build:
+    - npm run build
+  manual:
+    - Run Vite with VITE_TTS_ENDPOINT pointed at a Kokoro backend and verify NPC lines play.
+stories:
+  - id: US-001
+    title: Install requested agent resources
+    status: complete
+  - id: US-002
+    title: Add Kokoro Spanish TTS provider
+    status: complete
